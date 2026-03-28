@@ -1,0 +1,11 @@
+{% render 'partials/head.liquid', title: 'Van der Linden Elektrotechniek, Leverancier Jieldé lampen' %}
+
+<main>
+  {% for product in producten %}
+    <article>
+      <h3>{{ product.name }}</h3>
+    </article>
+  {% endfor %}
+</main>
+
+{% render 'partials/foot.liquid' %}
