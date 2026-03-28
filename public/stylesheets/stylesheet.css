@@ -6,6 +6,24 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/satoshi/WEB/fonts/Satoshi-Regular.woff2") format("woff2"),
+    url("../fonts/satoshi/WEB/fonts/Satoshi-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/satoshi/WEB/fonts/Satoshi-Black.woff2") format("woff2"),
+    url("../fonts/satoshi/WEB/fonts/Satoshi-Black.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --c-primary: red;
   --c-secondary: blue;
@@ -15,6 +33,8 @@
   --f-size-h2: 2rem;
   --f-size-h3: 1.5rem;
   --f-size-p: 1rem;
+
+  --f-family-satoshi: "Satoshi";
 
   --lh-p: 1.5;
   --lh-h: 1.2;
@@ -37,6 +57,7 @@ h6 {
 
 .h1-font {
   font-size: var(--f-size-h1);
+  font-family: var(--f-family-satoshi);
 }
 
 .h2-font {
