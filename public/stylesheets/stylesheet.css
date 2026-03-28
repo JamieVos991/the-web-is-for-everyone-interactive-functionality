@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --c-primary: red;
+  --c-secondary: blue;
+  --c-tertiary: green;
+
+  --f-size-h1: clamp(3rem, 12vw, 8rem);
+  --f-size-h2: 2rem;
+  --f-size-h3: 1.5rem;
+  --f-size-p: 1rem;
+
+  --lh-p: 1.5;
+  --lh-h: 1.2;
+  --br: 1rem;
+}
+
+p {
+  line-height: var(--lh-p);
+  font-size: var(--f-size-p);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--lh-h);
+}
+
+.h1-font {
+  font-size: var(--f-size-h1);
+}
+
+.h2-font {
+  font-size: var(--f-size-h2);
+}
+
+.h3-font {
+  font-size: var(--f-size-h3);
+}
