@@ -1,0 +1,23 @@
+{% render 'partials/head.liquid', title: product.name %}
+
+<main>
+  <article>
+    {% if product.image %}
+      <img src="https://fdnd-agency.directus.app/assets/{{ product.image }}" alt="{{ product.name }}">
+    {% endif %}
+
+    <h1>{{ product.name }}</h1>
+
+    {% if product.description %}
+      <p>{{ product.description }}</p>
+    {% endif %}
+
+    {% if product.price %}
+      <p>€ {{ product.price }}</p>
+    {% endif %}
+
+    <a href="">aasd</a>
+  </article>
+</main>
+
+{% render 'partials/foot.liquid' %}

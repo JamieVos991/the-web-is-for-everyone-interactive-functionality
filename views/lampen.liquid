@@ -3,7 +3,9 @@
 <main>
   {% for product in producten %}
     <article>
-      <h3>{{ product.name }}</h3>
+      <a href="/lamp/{{ product.id }}">
+        {{ product.name }}
+      </a>
     </article>
   {% endfor %}
 </main>

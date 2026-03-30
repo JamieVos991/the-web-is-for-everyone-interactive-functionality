@@ -25,24 +25,29 @@
 }
 
 :root {
-  --c-primary: red;
-  --c-secondary: blue;
+  --c-primary: rgb(172, 172, 172);
+  --c-secondary: rgb(233, 233, 233);
   --c-tertiary: green;
+  --c-black: black;
+  --c-white: white;
 
-  --f-size-h1: clamp(3rem, 12vw, 8rem);
+  --f-size-h1: clamp(2rem, 9vw, 5rem);
   --f-size-h2: 2rem;
   --f-size-h3: 1.5rem;
   --f-size-p: 1rem;
 
   --f-family-satoshi: "Satoshi";
+  --f-family-gillsans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 
   --lh-p: 1.5;
   --lh-h: 1.2;
-  --br: 1rem;
+  --br: 0.4rem;
 }
 
 p {
   line-height: var(--lh-p);
+  font-family: var(--f-family-gillsans);
   font-size: var(--f-size-p);
 }
 
@@ -58,6 +63,7 @@ h6 {
 .h1-font {
   font-size: var(--f-size-h1);
   font-family: var(--f-family-satoshi);
+  max-width: 40rem;
 }
 
 .h2-font {
@@ -66,4 +72,29 @@ h6 {
 
 .h3-font {
   font-size: var(--f-size-h3);
+}
+
+.remove-anchor {
+  text-decoration: none;
+  color: var(--c-black);
+}
+
+.btn-black,
+.btn-trans {
+  border-radius: var(--br);
+  font-family: var(--f-family-gillsans);
+  width: max-content;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  padding-top: 14px;
+}
+
+.btn-black {
+  background: var(--c-black);
+  color: var(--c-white);
+}
+
+.btn-trans {
+  border: 1px solid var(--c-black);
+  color: var(--c-black);
 }

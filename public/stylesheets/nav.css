@@ -1,0 +1,49 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  height: 6rem;
+  padding: 0 3rem;
+  font-family: var(--f-family-satoshi);
+
+  button {
+    @media (min-width: 800px) {
+      display: none;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    &:nth-of-type(1) {
+      flex-direction: column;
+      position: absolute;
+      top: 6rem;
+      left: 0;
+      right: 0;
+      background: var(--c-white);
+      display: none;
+
+      &.open {
+        display: flex;
+      }
+    }
+
+    &:nth-of-type(2) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      display: none;
+
+      @media (min-width: 800px) {
+        display: flex;
+      }
+    }
+  }
+}

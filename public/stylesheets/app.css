@@ -1,0 +1,65 @@
+.main-index {
+  section {
+    height: 100dvh;
+    padding: 1.5rem 3rem;
+    display: grid;
+    place-content: start;
+
+    &:nth-of-type(odd) {
+      background: var(--c-secondary);
+    }
+
+    &:nth-of-type(even) {
+      background: var(--c-primary);
+    }
+
+    &:nth-of-type(1) {
+      gap: 2rem;
+      grid-template-areas:
+        "title title"
+        "btn-ontdek btn-shop"
+        "description description"
+        "info info";
+
+      h1 {
+        grid-area: title;
+      }
+
+      a:nth-of-type(1) {
+        grid-area: btn-ontdek;
+      }
+
+      a:nth-of-type(2) {
+        grid-area: btn-shop;
+        margin-right: 2rem;
+      }
+
+      p {
+        grid-area: description;
+      }
+
+      div {
+        height: 20rem;
+        background: red;
+        width: 100%;
+        grid-area: info;
+        border-radius: var(--br);
+      }
+    }
+
+    &:nth-of-type(2) {
+    }
+
+    &:nth-of-type(3) {
+    }
+
+    &:nth-of-type(4) {
+    }
+
+    &:nth-of-type(5) {
+    }
+
+    &:nth-of-type(6) {
+    }
+  }
+}

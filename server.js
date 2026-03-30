@@ -21,8 +21,19 @@ app.get('/lampen', async function (request, response) {
   const producten = await fetch('https://fdnd-agency.directus.app/items/vdle_lamps')
   const productenJSON = await producten.json()
 
-  response.render('producten.liquid', {
+  response.render('lampen.liquid', {
     producten: productenJSON.data,
+  })
+})
+
+app.get('/lamp/:id', async function (request, response) {
+  const id = request.params.id
+
+  const product = await fetch(`https://fdnd-agency.directus.app/items/vdle_lamps/${id}`)
+  const productJSON = await product.json()
+
+  response.render('lamp.liquid', {
+    product: productJSON.data,
   })
 })
 
