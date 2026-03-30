@@ -28,20 +28,30 @@ app.get('/lampen', async function (request, response) {
 
 app.get('/schakelmateriaal', async function (request, response) {
   response.render('schakelmateriaal.liquid', {
-
   })
+})
+
+app.get('/electrotechniek', async function (request, response) {
+  response.render('electrotechniek.liquid')
 })
 
 app.get('/contact', async function (request, response) {
   response.render('contact.liquid', {
-
   })
 })
 
 app.get('/winkelwagen', async function (request, response) {
   response.render('winkelwagen.liquid', {
-    
   })
+})
+
+app.get('/login', async function (request, response) {
+  response.render('login.liquid', {
+  })
+})
+
+app.get('/admin', async function(request, response) {
+  response.render('admin.liquid')
 })
 
 app.set('port', process.env.PORT || 8000)
