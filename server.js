@@ -17,7 +17,7 @@ app.get('/', async function (request, response) {
   response.render('index.liquid')
 })
 
-app.get('/producten', async function (request, response) {
+app.get('/lampen', async function (request, response) {
   const producten = await fetch('https://fdnd-agency.directus.app/items/vdle_lamps')
   const productenJSON = await producten.json()
 
@@ -26,6 +26,23 @@ app.get('/producten', async function (request, response) {
   })
 })
 
+app.get('/schakelmateriaal', async function (request, response) {
+  response.render('schakelmateriaal.liquid', {
+
+  })
+})
+
+app.get('/contact', async function (request, response) {
+  response.render('contact.liquid', {
+
+  })
+})
+
+app.get('/winkelwagen', async function (request, response) {
+  response.render('winkelwagen.liquid', {
+    
+  })
+})
 
 app.set('port', process.env.PORT || 8000)
 
