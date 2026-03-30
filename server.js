@@ -37,6 +37,20 @@ app.get('/lamp/:id', async function (request, response) {
   })
 })
 
+let winkelwagen = []
+
+app.post('/winkelwagen/toevoegen', async function (request, response) {
+  const product = {
+    id: request.body.id,
+    name: request.body.name,
+    price: request.body.price
+  }
+
+  winkelwagen.push(product)
+
+  response.redirect('/winkelwagen')
+})
+
 app.get('/schakelmateriaal', async function (request, response) {
   response.render('schakelmateriaal.liquid', {
   })
@@ -57,6 +71,7 @@ app.get('/contact', async function (request, response) {
 
 app.get('/winkelwagen', async function (request, response) {
   response.render('winkelwagen.liquid', {
+    winkelwagen: winkelwagen
   })
 })
 

@@ -16,7 +16,13 @@
       <p>€ {{ product.price }}</p>
     {% endif %}
 
-    <a href="">aasd</a>
+    <form method="POST" action="/winkelwagen/toevoegen">
+      <input type="hidden" name="id" value="{{ product.id }}">
+      <input type="hidden" name="name" value="{{ product.name }}">
+      <input type="hidden" name="price" value="{{ product.price }}">
+
+      <button type="submit">Voeg toe aan winkelwagen</button>
+    </form>
   </article>
 </main>
 

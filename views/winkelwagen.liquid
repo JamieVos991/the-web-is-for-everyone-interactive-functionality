@@ -1,0 +1,17 @@
+{% render 'partials/head.liquid', title: 'Van der Linden Elektrotechniek, Leverancier Jieldé lampen' %}
+
+<main>
+  <h1>Winkelwagen</h1>
+
+  {% if winkelwagen.length > 0 %}
+    <ul>
+      {% for product in winkelwagen %}
+        <li>{{ product.name }} - € {{ product.price }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Je winkelwagen is leeg</p>
+  {% endif %}
+</main>
+
+{% render 'partials/foot.liquid' %}
