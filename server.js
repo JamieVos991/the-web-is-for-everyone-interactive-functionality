@@ -35,6 +35,10 @@ app.get('/electrotechniek', async function (request, response) {
   response.render('electrotechniek.liquid')
 })
 
+app.get('/gordijnrails', async function (request, response) {
+  response.render('gordijnrails.liquid')
+})
+
 app.get('/contact', async function (request, response) {
   response.render('contact.liquid', {
   })
@@ -51,7 +55,9 @@ app.get('/login', async function (request, response) {
 })
 
 app.get('/admin', async function(request, response) {
-  response.render('admin.liquid')
+  response.render('admin.liquid', {
+
+  })
 })
 
 app.set('port', process.env.PORT || 8000)
