@@ -14,11 +14,6 @@ app.use(session({
   cookie: { secure: false } 
 }))
 
-app.use((req, res, next) => {
-  res.locals.winkelwagenAantal = req.session.winkelwagen ? req.session.winkelwagen.length : 0;
-  next();
-});
-
 app.use(express.urlencoded({extended: true}))
 
 app.use(express.static('public'))
