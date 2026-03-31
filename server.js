@@ -2,7 +2,17 @@ import express from 'express'
 
 import { Liquid } from 'liquidjs';
 
+import session from 'express-session'
+
+
 const app = express()
+
+app.use(session({
+  secret: 'supergeheim123', 
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } 
+}))
 
 app.use(express.urlencoded({extended: true}))
 
@@ -37,16 +47,27 @@ app.get('/lamp/:id', async function (request, response) {
   })
 })
 
-let winkelwagen = []
 
-app.post('/winkelwagen/toevoegen', async function (request, response) {
+app.get('/winkelwagen', async function (request, response) {
+  const winkelwagen = request.session.winkelwagen || []
+  
+  response.render('winkelwagen.liquid', {
+    winkelwagen: winkelwagen
+  })
+})
+
+app.post('/winkelwagen/toevoegen', function (request, response) {
   const product = {
     id: request.body.id,
     name: request.body.name,
     price: request.body.price
   }
 
-  winkelwagen.push(product)
+  if (!request.session.winkelwagen) {
+    request.session.winkelwagen = []
+  }
+
+  request.session.winkelwagen.push(product)
 
   response.redirect('/winkelwagen')
 })
@@ -66,12 +87,6 @@ app.get('/gordijnrails', async function (request, response) {
 
 app.get('/contact', async function (request, response) {
   response.render('contact.liquid', {
-  })
-})
-
-app.get('/winkelwagen', async function (request, response) {
-  response.render('winkelwagen.liquid', {
-    winkelwagen: winkelwagen
   })
 })
 
