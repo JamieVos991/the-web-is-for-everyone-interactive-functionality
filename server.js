@@ -14,6 +14,11 @@ app.use(session({
   cookie: { secure: false } 
 }))
 
+app.use((req, res, next) => {
+  res.locals.winkelwagenAantal = req.session.winkelwagen ? req.session.winkelwagen.length : 0;
+  next();
+});
+
 app.use(express.urlencoded({extended: true}))
 
 app.use(express.static('public'))
@@ -24,7 +29,9 @@ app.engine('liquid', engine.express())
 app.set('views', './views')
 
 app.get('/', async function (request, response) {
-  response.render('index.liquid')
+  response.render('index.liquid', {
+    winkelwagenAantal: request.session.winkelwagen ? request.session.winkelwagen.length : 0
+  })
 })
 
 app.get('/lampen', async function (request, response) {
@@ -47,29 +54,36 @@ app.get('/lamp/:id', async function (request, response) {
   })
 })
 
-
 app.get('/winkelwagen', async function (request, response) {
   const winkelwagen = request.session.winkelwagen || []
-  
+
   response.render('winkelwagen.liquid', {
     winkelwagen: winkelwagen
   })
 })
 
 app.post('/winkelwagen/toevoegen', function (request, response) {
-  const product = {
-    id: request.body.id,
-    name: request.body.name,
-    price: request.body.price
-  }
-
+  const productId = request.body.id;
+  
   if (!request.session.winkelwagen) {
-    request.session.winkelwagen = []
+    request.session.winkelwagen = [];
   }
 
-  request.session.winkelwagen.push(product)
+  const bestaandProduct = request.session.winkelwagen.find(item => item.id === productId);
 
-  response.redirect('/winkelwagen')
+  if (bestaandProduct) {
+    bestaandProduct.aantal += 1;
+  } else {
+    const nieuwProduct = {
+      id: productId,
+      name: request.body.name,
+      base_price: request.body.base_price,
+      aantal: 1
+    };
+    request.session.winkelwagen.push(nieuwProduct);
+  }
+
+  response.redirect('/winkelwagen');
 })
 
 app.get('/schakelmateriaal', async function (request, response) {
@@ -97,7 +111,6 @@ app.get('/login', async function (request, response) {
 
 app.get('/admin', async function(request, response) {
   response.render('admin.liquid', {
-
   })
 })
 

@@ -1,17 +1,36 @@
-{% render 'partials/head.liquid', title: 'Van der Linden Elektrotechniek, Leverancier Jieldé lampen' %}
+{% render 'partials/head.liquid', title: 'Winkelwagen - Van der Linden Elektrotechniek' %}
 
 <main>
   <h1>Winkelwagen</h1>
 
   {% if winkelwagen.length > 0 %}
+    {% assign totaal_prijs = 0 %}
     <ul>
       {% for product in winkelwagen %}
-        <li>{{ product.name }} - € {{ product.price }}</li>
+        {% assign regel_totaal = product.base_price | times: product.aantal %}
+        {% assign totaal_prijs = totaal_prijs | plus: regel_totaal %}
+
+        <li>
+          {{ product.name }}
+          {% if product.aantal > 1 %}
+            <strong>x{{ product.aantal }}</strong>
+          {% endif %}
+          - € {{ product.base_price }}
+          {% if product.aantal > 1 %}
+            (Subtotaal: € {{ regel_totaal }})
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
+
+    <hr>
+    <h3>Totaal te betalen: € {{ totaal_prijs }}</h3>
+
   {% else %}
     <p>Je winkelwagen is leeg</p>
   {% endif %}
+
+  <a href="/lampen">Verder winkelen</a>
 </main>
 
 {% render 'partials/foot.liquid' %}
