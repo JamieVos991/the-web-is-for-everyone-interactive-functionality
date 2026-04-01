@@ -53,6 +53,10 @@ Clone deze repository en open hier de terminal.
 
 ## Bronnen
 
+[POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST)
+[array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+[express-session](https://expressjs.com/en/resources/middleware/session.html)
+
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
