@@ -33,7 +33,16 @@ Ik heb mijn navigatie in de [head.liquid](https://github.com/JamieVos991/the-web
 
 Mijn naamgevingen in de [styleguide](https://github.com/JamieVos991/the-web-is-for-everyone-interactive-functionality/blob/main/public/stylesheets/stylesheet.css) zijn consistent en in dezelfde taal.
 
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
+### JS 
+https://github.com/JamieVos991/the-web-is-for-everyone-interactive-functionality/blob/3606f0fb5688aa36084c2f6ab2d30ff45c04c5dd/server.js#L60-L82
+
+1. Maak een POST route aan. 
+2. Haalt de id van het product uit de request body.
+3. Checkt of er al een winkelwagen bestaat in de session
+Zo niet maak een lege array aan
+4. Zoek in de winkelwagen naar een product met dezelfde id, .find() geeft het eerste matchende item terug (of undefined als die er niet is)
+5. Als het product al in de winkelwagen zit: verhoog het aantal met 1
+6. Anders als het product niet bestaat maak dan een nieuwe aan object aan met: id, name, base_price, aantal (start op 1) en Voeg dat toe aan de winkelwagen array.
 
 ## Installatie
 
