@@ -15,15 +15,13 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
 
 ## Beschrijving
 
-Ik maak een website voor <a href="https://www.vdle.nl/">VDLE</a>. Dit is een webshop met lampen als producten. De huidige website die nu live staat is vooral oud, en moet vernieuwd worden. Ik wil vooral de gebruiksvriendelijkheid, performance en SEO van de pagina verbeteren.
+Ik maak een website voor <a href="https://www.vdle.nl/">VDLE</a>. Dit is een webshop met lampen als producten. De huidige website die nu live staat is vooral oud, en moet vernieuwd worden. Ik wil vooral de gebruiksvriendelijkheid, performance en SEO van de pagina verbeteren. <a href="https://the-web-is-for-everyone-interactive-tm72.onrender.com/">Render pagina</a>
 
 <img src="image.png" width="400px">
 
-<a href="https://the-web-is-for-everyone-interactive-tm72.onrender.com/">Render pagina</a>
-
 ## Gebruik
 
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+Als POST heb ik er voor gezorgd dat je producten[ aan het winkelwagentje kan toevoegen](https://github.com/JamieVos991/the-web-is-for-everyone-interactive-functionality/issues/3). Ik had een probleem dat ik een globale array gebruikte dus iedereen vanaf elke browser had dezelfde winkelwagen inhoud. Ik heb nu met [express-session](https://expressjs.com/en/resources/middleware/session.html), dat iedereen een eigen sessie heeft in de cookies.
 
 ## Kenmerken
 
