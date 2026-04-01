@@ -47,7 +47,9 @@ Zo niet maak een lege array aan
 
 ## Installatie
 
-<!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
+Clone deze repository en open hier de terminal. 
+
+`npm install` en daarna `npm start`
 
 ## Bronnen
 
