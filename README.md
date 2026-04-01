@@ -43,6 +43,7 @@ Zo niet maak een lege array aan
 4. Zoek in de winkelwagen naar een product met dezelfde id, .find() geeft het eerste matchende item terug (of undefined als die er niet is)
 5. Als het product al in de winkelwagen zit: verhoog het aantal met 1
 6. Anders als het product niet bestaat maak dan een nieuwe aan object aan met: id, name, base_price, aantal (start op 1) en Voeg dat toe aan de winkelwagen array.
+7. Rederict naar /winkelwagen
 
 ## Installatie
 
