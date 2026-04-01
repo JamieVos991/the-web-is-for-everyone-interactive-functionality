@@ -25,6 +25,14 @@ Als POST heb ik er voor gezorgd dat je producten[ aan het winkelwagentje kan toe
 
 ## Kenmerken
 
+### HTML
+
+Ik heb mijn navigatie in de [head.liquid](https://github.com/JamieVos991/the-web-is-for-everyone-interactive-functionality/blob/main/views/partials/head.liquid) gezet, zodat dit herbruikt wordt op elke pagina in plaats van opnieuw de HTML strcutuur op elke pagina zetten. Een soort van component.
+
+### CSS
+
+Mijn naamgevingen in de [styleguide](https://github.com/JamieVos991/the-web-is-for-everyone-interactive-functionality/blob/main/public/stylesheets/stylesheet.css) zijn consistent en in dezelfde taal.
+
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
 
 ## Installatie
