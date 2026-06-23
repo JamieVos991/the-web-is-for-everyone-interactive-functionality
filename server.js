@@ -59,7 +59,7 @@ app.get('/winkelwagen', async function (request, response) {
 
 app.post('/winkelwagen/toevoegen', function (request, response) {
   const productId = request.body.id;
-  
+
   if (!request.session.winkelwagen) {
     request.session.winkelwagen = [];
   }
@@ -78,7 +78,15 @@ app.post('/winkelwagen/toevoegen', function (request, response) {
     request.session.winkelwagen.push(nieuwProduct);
   }
 
-  response.redirect('/winkelwagen');
+  // Progressive Enhancement: JSON response voor fetch requests, redirect voor gewone forms
+  if (request.headers.accept && request.headers.accept.includes('application/json')) {
+    response.json({
+      success: true,
+      aantal: request.session.winkelwagen.length
+    });
+  } else {
+    response.redirect('/winkelwagen');
+  }
 })
 
 app.get('/schakelmateriaal', async function (request, response) {
