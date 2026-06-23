@@ -12,14 +12,14 @@
       <p>{{ product.description }}</p>
     {% endif %}
 
-    {% if product.price %}
-      <p>€ {{ product.price }}</p>
+    {% if product.base_price %}
+      <p>€ {{ product.base_price }}</p>
     {% endif %}
 
     <form method="POST" action="/winkelwagen/toevoegen">
       <input type="hidden" name="id" value="{{ product.id }}">
       <input type="hidden" name="name" value="{{ product.name }}">
-      <input type="hidden" name="price" value="{{ product.price }}">
+      <input type="hidden" name="base_price" value="{{ product.base_price }}">
 
       <button type="submit">Voeg toe aan winkelwagen</button>
     </form>

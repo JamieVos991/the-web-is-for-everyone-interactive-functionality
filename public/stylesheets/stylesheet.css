@@ -60,6 +60,12 @@ h6 {
   line-height: var(--lh-h);
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .h1-font {
   font-size: var(--f-size-h1);
   font-family: var(--f-family-satoshi);

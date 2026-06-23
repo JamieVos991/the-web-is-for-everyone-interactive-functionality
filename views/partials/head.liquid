@@ -13,7 +13,7 @@
   <body>  
     <header>
       <nav>
-        <button>
+        <button class="hamburger-btn">
           <svg
             width="24"
             height="24"
@@ -97,7 +97,7 @@
             </a>
           </li>
           <li>
-            <a class="remove-anchor" href="/winkelwagen" aria-label="Winkelwagen pagina">
+            <a class="remove-anchor btn-winkelwagen" href="/winkelwagen" aria-label="Winkelwagen pagina">
               <svg
                 width="24"
                 height="24"
@@ -120,6 +120,10 @@
                   fill="currentColor"
                 />
               </svg>
+              {% if winkelwagenAantal > 0 %}
+                <span class="badge">{{ winkelwagenAantal }}</span>
+              {% endif %}
+
             </a>
           </li>
         </ul>

@@ -14,7 +14,7 @@
     }
 
     &:nth-of-type(1) {
-      gap: 2rem;
+      gap: 1rem;
       grid-template-areas:
         "title title"
         "btn-ontdek btn-shop"
